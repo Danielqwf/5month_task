@@ -12,8 +12,7 @@ class WatchAdmin(admin.ModelAdmin):
 
 @admin.register(WatchCategory)
 class WatchCategoryAdmin(admin.ModelAdmin):
-    list_display = ('condition', 'style', 'gender', 'case_material', 'dial_color', 'band_color',
-                    'strap_material', 'case_shape', 'water_resistance', 'movement')
-    list_filter = ('condition', 'style', 'gender', 'case_material')
+    list_display = ('condition', 'style', 'gender')
+    list_filter = ('condition', 'style', 'gender')
     search_fields = ('watch__brand', 'watch__model')
 

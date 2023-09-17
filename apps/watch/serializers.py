@@ -3,15 +3,11 @@ from rest_framework import serializers
 from apps.watch.models import Watch, WatchCategory
 
 class WatchCategorySerializer(serializers.ModelSerializer):
-    diameter = serializers.SerializerMethodField()
 
     class Meta:
         model = WatchCategory
-        fields = ('gender', 'style', 'condition', 'glass', 'case_material', 'dial_color', 'band_color',
-                  'strap_material', 'case_shape', 'diameter', 'water_resistance', 'movement')
+        fields = ('gender', 'style', 'condition')
 
-    def get_diameter(self, obj):
-        return f"{obj.diameter} мм"
 
 
 class WatchSerializer(serializers.ModelSerializer):

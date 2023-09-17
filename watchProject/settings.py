@@ -154,3 +154,7 @@ SIMPLE_JWT = {
     "SIGNING_KEY": SECRET_KEY,
     "AUTH_HEADER_TYPES": ("Bearer",),
 }
+
+JAZZMIN_UI_TWEAKS = {
+    "theme": "darkly"
+}
