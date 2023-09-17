@@ -17,7 +17,6 @@ class SignUpSerializer(serializers.ModelSerializer):
         user = super().create(validated_data)
         user.set_password(password)
         user.save()
-        # Token.objects.get_or_create(user=user)
         return user
 
     class Meta:
