@@ -4,6 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
 from apps.watch.urls import router as watch_router
+from .yasg import urlpatterns_swagger as doc_urls
 
 
 routers = [
@@ -18,4 +19,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.watch.urls')),
     path('', include('apps.users.urls')),
-] + router.urls + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + router.urls + doc_urls + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
